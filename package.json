@@ -2,8 +2,11 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +17,8 @@
     "dotenv": "^16.5.0",
     "express": "^5.1.0",
     "mysql": "^2.18.1",
+    "mysql2": "^3.14.1",
+    "node-cron": "^4.1.1",
     "oracledb": "^6.8.0"
   },
   "devDependencies": {

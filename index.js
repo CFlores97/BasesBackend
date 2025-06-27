@@ -1,16 +1,20 @@
 import express from 'express'
 import dotenv from 'dotenv'
-import replicationRoutes from './routes/replicationRoutes.js'
+import './Poller/poller.js'
+dotenv.config();
+
+import apiRoutes from './routes/apiRoutes.js'
 
 const app = express();
 
-app.use(express.json());
+//app.use(express.json());
 
-app.use('/api', replicationRoutes);
+app.use('/api', apiRoutes);
 
 const PORT = process.env.PORT || 3000; 
 
 app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+    console.log(`Escuchando en puerto http://localhost:${PORT}`);
+    console.log("Node-bridge con cron activo");
 });
 
